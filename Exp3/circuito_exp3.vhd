@@ -1,5 +1,5 @@
 library ieee;
-use ieee.std_logic_1164.all
+use ieee.std_logic_1164.all;
 
 entity circuito_exp3 is
     port (
@@ -33,7 +33,7 @@ architecture behh of circuito_exp3 is
             db_memoria          : out std_logic_vector (3 downto 0);
             db_chaves           : out std_logic_vector (3 downto 0)
         );
-      end component;
+    end component;
 
     component unidade_controle is 
         port ( 
@@ -49,41 +49,49 @@ architecture behh of circuito_exp3 is
             db_estado : out std_logic_vector(3 downto 0)
         );
     end component;
+
+    component hexa7seg is
+        port (
+            hexa : in  std_logic_vector(3 downto 0);
+            sseg : out std_logic_vector(6 downto 0)
+        );
+    end component;
         signal zeraC_sig, contaC_sig, zeraR_sig, registraR_sig, fimC_sig : std_logic;
-        signal out_estado, out_cont, out_mem, out_chaves: std_logic_vector (3 downto 0)
+        signal out_estado, out_cont, out_mem, out_chaves: std_logic_vector (3 downto 0);
 begin
     FD: fluxo_dados port map(
         clock => clock,
-        zeraC => zeraC_sig
-        contaC => contaC_sig
-        escreveM => '0'
-        zeraR => zeraR_sig
-        registraR => registraR_sig
-        chaves => chaves
-        chavesIgualMemoria => db_igual
-        fimC => fimC_sig
-        db_contagem => out_cont
-        db_memoria => out_mem
+        zeraC => zeraC_sig,
+        contaC => contaC_sig,
+        escreveM => '0',
+        zeraR => zeraR_sig,
+        registraR => registraR_sig,
+        chaves => chaves,
+        chavesIgualMemoria => db_igual,
+        fimC => fimC_sig,
+        db_contagem => out_cont,
+        db_memoria => out_mem,
         db_chaves => out_chaves
     );
 
     UC: unidade_controle port map(
         clock => clock,
-        reset => reset
-        iniciar => iniciar
-        fimC => fimC_sig
-        zeraC => zeraC_sig
-        contaC => contaC_sig
-        zeraR => zeraR_sig
-        registraR => registraR_sig
-        pronto => pronto
+        reset => reset,
+        iniciar => iniciar,
+        fimC => fimC_sig,
+        zeraC => zeraC_sig,
+        contaC => contaC_sig,
+        zeraR => zeraR_sig,
+        registraR => registraR_sig,
+        pronto => pronto,
         db_estado => out_estado
     );
 
-    HEX0: 
+    HEX0: hexa7seg port map(hexa => out_cont, sseg => db_contagem);
 
-    HEX1
+    HEX1: hexa7seg port map(hexa => out_mem, sseg => db_memoria);
 
-    HEX2
+    HEX2: hexa7seg port map(hexa => out_chaves, sseg => db_chaves);
 
-    HEX5
+    HEX5: hexa7seg port map(hexa => out_estado, sseg => db_estado);
+end architecture;
