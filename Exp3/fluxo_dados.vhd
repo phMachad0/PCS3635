@@ -87,7 +87,7 @@ begin
 
     -- sinais de controle ativos em alto
     -- sinais dos componentes ativos em baixo
-    s_not_zera    <= zeraC;
+    s_not_zera    <= not zeraC;
     s_not_escreve <= not escreveM;
     
     contador: contador_163
@@ -95,8 +95,8 @@ begin
             clock => clock,
             clr   => s_not_zera,  -- clr ativo em baixo
             ld    => '1',
-            ent   => contaC,
-            enp   => '1',
+            ent   => '1',
+            enp   => contaC,
             D     => "0000",
             Q     => s_endereco,
             rco   => fimC
