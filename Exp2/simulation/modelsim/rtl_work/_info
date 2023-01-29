@@ -1,0 +1,201 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/pedro/Documentos/LabDig1/Exp2/simulation/modelsim
+Ecircuito_exp2_ativ2
+Z1 w1673759545
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 3
+R0
+Z4 8/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/circuito_exp2_ativ2.vhd
+Z5 F/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/circuito_exp2_ativ2.vhd
+l0
+Z6 L28 1
+VZFH?NZIP1>EXHl>Xf3UVa2
+!s100 d?;g[Lb<8An>=6a<fQ2Xd1
+Z7 OV;C;2020.1;71
+31
+Z8 !s110 1673825254
+!i10b 1
+Z9 !s108 1673825254.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/circuito_exp2_ativ2.vhd|
+!s107 /home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/circuito_exp2_ativ2.vhd|
+!i113 1
+Z11 o-93 -work work
+Z12 tExplicit 1 CvgOpt 0
+Aestrutural
+Z13 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z14 DEx4 work 8 ram_16x4 0 22 X2z`[V>6Jzg[[5^c5N5700
+R2
+R3
+DEx4 work 19 circuito_exp2_ativ2 0 22 ZFH?NZIP1>EXHl>Xf3UVa2
+!i122 3
+l92
+L42 102
+V`niJYU86Z29R]X3MU>S1M3
+!s100 i0?1C>aWUS<V>=0PKP9FH3
+R7
+31
+R8
+!i10b 1
+R9
+R10
+Z15 !s107 /home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/circuito_exp2_ativ2.vhd|
+!i113 1
+R11
+R12
+Ecomparador_85
+Z16 w1673379734
+R2
+R3
+!i122 2
+R0
+Z17 8/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/comparador_85.vhd
+Z18 F/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/comparador_85.vhd
+l0
+L18 1
+V1N<MIzBN=ljN0]E[5:L0[1
+!s100 UchionOWWKZd[S9Df?mH>0
+R7
+31
+R8
+!i10b 1
+R9
+Z19 !s90 -reportprogress|300|-93|-work|work|/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/comparador_85.vhd|
+Z20 !s107 /home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/comparador_85.vhd|
+!i113 1
+R11
+R12
+Adataflow
+R2
+R3
+DEx4 work 13 comparador_85 0 22 1N<MIzBN=ljN0]E[5:L0[1
+!i122 2
+l41
+L37 20
+VjgX=_KT<^48JTlI`nVC8W2
+!s100 P^;hPi]5OVVdjL6GdC0U80
+R7
+31
+R8
+!i10b 1
+R9
+R19
+R20
+!i113 1
+R11
+R12
+Econtador_163
+R16
+R13
+R2
+R3
+!i122 1
+R0
+Z21 8/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/contador_163.vhd
+Z22 F/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/contador_163.vhd
+l0
+L19 1
+VcdPhfoV:B5M=dWknW]j7@3
+!s100 HncTPI9f>PSaSM@8d2b100
+R7
+31
+R8
+!i10b 1
+R9
+Z23 !s90 -reportprogress|300|-93|-work|work|/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/contador_163.vhd|
+Z24 !s107 /home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/contador_163.vhd|
+!i113 1
+R11
+R12
+Acomportamental
+R13
+R2
+R3
+DEx4 work 12 contador_163 0 22 cdPhfoV:B5M=dWknW]j7@3
+!i122 1
+l34
+L32 29
+VdU]^z>WJD9hzVRc5]:oC@0
+!s100 :UBU?:`V1RR45eY[;lMH80
+R7
+31
+R8
+!i10b 1
+R9
+R23
+R24
+!i113 1
+R11
+R12
+Eram_16x4
+R16
+R13
+R2
+R3
+!i122 0
+R0
+Z25 8/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/ram_16x4.vhd
+Z26 F/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/ram_16x4.vhd
+l0
+R6
+VX2z`[V>6Jzg[[5^c5N5700
+!s100 7_Oke2`[UPj15mR6JKQR]2
+R7
+31
+R8
+!i10b 1
+R9
+Z27 !s90 -reportprogress|300|-93|-work|work|/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/ram_16x4.vhd|
+Z28 !s107 /home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/ram_16x4.vhd|
+!i113 1
+R11
+R12
+Aram_modelsim
+R13
+R2
+R3
+R14
+!i122 0
+l90
+L70 40
+VGcX9o`X]B>igijkg7NZ5m1
+!s100 @Wb^3GhPLl>oU<nW@hX`C0
+R7
+31
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R11
+R12
+Aram_mif
+R13
+R2
+R3
+R14
+!i122 0
+l48
+L40 28
+Vii:Na26AemzZM94VCbXF31
+!s100 Q0QMUcJL86RTKThife6VD3
+R7
+31
+R8
+!i10b 1
+R9
+R27
+R28
+!i113 1
+R11
+R12

@@ -1,0 +1,73 @@
+# Loading project Exp2
+# Compile of ram_16x4.vhd was successful.
+# Compile of ram_16x4_tb.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.ram_16x4 work.ram_16x4_tb
+# vsim work.ram_16x4 work.ram_16x4_tb 
+# Start time: 20:33:05 on Jan 15,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.ram_16x4(ram_modelsim)
+# Loading work.ram_16x4_tb(tb)
+add wave -position insertpoint  \
+sim:/ram_16x4/clk \
+sim:/ram_16x4/endereco \
+sim:/ram_16x4/dado_entrada \
+sim:/ram_16x4/we \
+sim:/ram_16x4/ce \
+sim:/ram_16x4/dado_saida \
+sim:/ram_16x4/memoria
+run -all
+# ** Note: Inicio da simulacao
+#    Time: 0 ps  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Caso de teste 1 - leitura da memoria
+#    Time: 0 ps  Iteration: 0  Instance: /ram_16x4_tb
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /ram_16x4
+# ** Note: Caso de teste 1 - leitura da memoria
+#    Time: 420 ns  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Caso de teste 1 - leitura da memoria
+#    Time: 540 ns  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Caso de teste 4 - leitura da memoria
+#    Time: 660 ns  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Fim da simulacao
+#    Time: 1080 ns  Iteration: 0  Instance: /ram_16x4_tb
+quit -sim
+# End time: 20:34:30 on Jan 15,2023, Elapsed time: 0:01:25
+# Errors: 0, Warnings: 4
+vsim work.ram_16x4_tb
+# vsim work.ram_16x4_tb 
+# Start time: 20:34:40 on Jan 15,2023
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.ram_16x4_tb(tb)
+# Loading work.ram_16x4(ram_modelsim)
+add wave -position insertpoint  \
+sim:/ram_16x4_tb/clk_in \
+sim:/ram_16x4_tb/endereco_in \
+sim:/ram_16x4_tb/dado_in \
+sim:/ram_16x4_tb/we_in \
+sim:/ram_16x4_tb/dado_out \
+sim:/ram_16x4_tb/keep_simulating \
+sim:/ram_16x4_tb/caso \
+sim:/ram_16x4_tb/intervalo \
+sim:/ram_16x4_tb/clockPeriod
+run -all
+# ** Note: Inicio da simulacao
+#    Time: 0 ps  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Caso de teste 1 - leitura da memoria
+#    Time: 0 ps  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Caso de teste 1 - leitura da memoria
+#    Time: 420 ns  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Caso de teste 1 - leitura da memoria
+#    Time: 540 ns  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Caso de teste 4 - leitura da memoria
+#    Time: 660 ns  Iteration: 0  Instance: /ram_16x4_tb
+# ** Note: Fim da simulacao
+#    Time: 1080 ns  Iteration: 0  Instance: /ram_16x4_tb
+# End time: 21:25:49 on Jan 15,2023, Elapsed time: 0:51:09
+# Errors: 0, Warnings: 2

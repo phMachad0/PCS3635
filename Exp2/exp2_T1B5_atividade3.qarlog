@@ -1,0 +1,18 @@
+Quartus Prime Archive log --	/home/pedro/Documentos/LabDig1/Exp2/exp2_T1B5_atividade3.qarlog
+
+Archive:	/home/pedro/Documentos/LabDig1/Exp2/exp2_T1B5_atividade3.qar
+Date:		Sun Jan 15 02:45:44 2023
+Quartus Prime		20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/pedro/Documentos/LabDig1/Exp2/Exp2Circuit.qpf
+/home/pedro/Documentos/LabDig1/Exp2/Exp2Circuit.qsf
+/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/circuito_exp2_ativ2.vhd
+/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/comparador_85.vhd
+/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/contador_163.vhd
+/home/pedro/Downloads/Arquivos VHDL para a Experiencia 2-20230114/ram_16x4.vhd
+/home/pedro/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 7 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

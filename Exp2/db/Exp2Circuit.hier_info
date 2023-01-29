@@ -1,0 +1,119 @@
+|circuito_exp2_ativ2
+clock => contador_163:contador.clock
+clock => ram_16x4:memoria.clk
+zera => contador_163:contador.clr
+conta => contador_163:contador.ent
+escreve => ram_16x4:memoria.we
+chaves[0] => comparador_85:comparador.i_B0
+chaves[0] => ram_16x4:memoria.dado_entrada[0]
+chaves[1] => comparador_85:comparador.i_B1
+chaves[1] => ram_16x4:memoria.dado_entrada[1]
+chaves[2] => comparador_85:comparador.i_B2
+chaves[2] => ram_16x4:memoria.dado_entrada[2]
+chaves[3] => comparador_85:comparador.i_B3
+chaves[3] => ram_16x4:memoria.dado_entrada[3]
+igual << comparador_85:comparador.o_AEQB
+fim << contador_163:contador.rco
+db_contagem[0] << contador_163:contador.Q[0]
+db_contagem[1] << contador_163:contador.Q[1]
+db_contagem[2] << contador_163:contador.Q[2]
+db_contagem[3] << contador_163:contador.Q[3]
+db_memoria[0] << ram_16x4:memoria.dado_saida[0]
+db_memoria[1] << ram_16x4:memoria.dado_saida[1]
+db_memoria[2] << ram_16x4:memoria.dado_saida[2]
+db_memoria[3] << ram_16x4:memoria.dado_saida[3]
+
+
+|circuito_exp2_ativ2|contador_163:contador
+clock => IQ[0].CLK
+clock => IQ[1].CLK
+clock => IQ[2].CLK
+clock => IQ[3].CLK
+clr => IQ.OUTPUTSELECT
+clr => IQ.OUTPUTSELECT
+clr => IQ.OUTPUTSELECT
+clr => IQ.OUTPUTSELECT
+ld => IQ.OUTPUTSELECT
+ld => IQ.OUTPUTSELECT
+ld => IQ.OUTPUTSELECT
+ld => IQ.OUTPUTSELECT
+ent => process_0.IN0
+ent => rco.IN1
+enp => process_0.IN1
+D[0] => IQ.DATAB
+D[1] => IQ.DATAB
+D[2] => IQ.DATAB
+D[3] => IQ.DATAB
+Q[0] <= IQ[0].DB_MAX_OUTPUT_PORT_TYPE
+Q[1] <= IQ[1].DB_MAX_OUTPUT_PORT_TYPE
+Q[2] <= IQ[2].DB_MAX_OUTPUT_PORT_TYPE
+Q[3] <= IQ[3].DB_MAX_OUTPUT_PORT_TYPE
+rco <= rco.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|circuito_exp2_ativ2|comparador_85:comparador
+i_A3 => agtb.IN0
+i_A3 => agtb.IN0
+i_B3 => agtb.IN1
+i_B3 => agtb.IN1
+i_A2 => agtb.IN1
+i_A2 => agtb.IN0
+i_B2 => agtb.IN1
+i_B2 => agtb.IN1
+i_A1 => agtb.IN1
+i_A1 => agtb.IN0
+i_B1 => agtb.IN1
+i_B1 => agtb.IN1
+i_A0 => agtb.IN1
+i_A0 => aeqb.IN0
+i_B0 => aeqb.IN1
+i_B0 => agtb.IN1
+i_AGTB => o_ALTB.IN0
+i_ALTB => o_AGTB.IN0
+i_AEQB => o_AEQB.IN1
+i_AEQB => o_AGTB.IN1
+i_AEQB => o_ALTB.IN1
+o_AGTB <= o_AGTB.DB_MAX_OUTPUT_PORT_TYPE
+o_ALTB <= o_ALTB.DB_MAX_OUTPUT_PORT_TYPE
+o_AEQB <= o_AEQB.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|circuito_exp2_ativ2|ram_16x4:memoria
+clk => memoria~8.CLK
+clk => memoria~0.CLK
+clk => memoria~1.CLK
+clk => memoria~2.CLK
+clk => memoria~3.CLK
+clk => memoria~4.CLK
+clk => memoria~5.CLK
+clk => memoria~6.CLK
+clk => memoria~7.CLK
+clk => memoria.CLK0
+endereco[0] => memoria~3.DATAIN
+endereco[0] => memoria.WADDR
+endereco[0] => memoria.RADDR
+endereco[1] => memoria~2.DATAIN
+endereco[1] => memoria.WADDR1
+endereco[1] => memoria.RADDR1
+endereco[2] => memoria~1.DATAIN
+endereco[2] => memoria.WADDR2
+endereco[2] => memoria.RADDR2
+endereco[3] => memoria~0.DATAIN
+endereco[3] => memoria.WADDR3
+endereco[3] => memoria.RADDR3
+dado_entrada[0] => memoria~7.DATAIN
+dado_entrada[0] => memoria.DATAIN
+dado_entrada[1] => memoria~6.DATAIN
+dado_entrada[1] => memoria.DATAIN1
+dado_entrada[2] => memoria~5.DATAIN
+dado_entrada[2] => memoria.DATAIN2
+dado_entrada[3] => memoria~4.DATAIN
+dado_entrada[3] => memoria.DATAIN3
+we => memoria.DATAA
+ce => memoria.OUTPUTSELECT
+dado_saida[0] <= memoria.DATAOUT
+dado_saida[1] <= memoria.DATAOUT1
+dado_saida[2] <= memoria.DATAOUT2
+dado_saida[3] <= memoria.DATAOUT3
+
+

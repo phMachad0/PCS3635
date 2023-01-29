@@ -1,0 +1,284 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/pedro/intelFPGA_lite/20.1/modelsim_ase/bin
+Ecomparador_85
+Z0 w1673379734
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+Z3 d/home/pedro/Documentos/LabDig1/Exp2
+Z4 8/home/pedro/Documentos/LabDig1/Exp2/comparador_85.vhd
+Z5 F/home/pedro/Documentos/LabDig1/Exp2/comparador_85.vhd
+l0
+L18 1
+VnRX1cKGSWahUOZjWkD0Vo3
+!s100 UchionOWWKZd[S9Df?mH>0
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1673752926
+!i10b 1
+Z8 !s108 1673752926.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/Documentos/LabDig1/Exp2/comparador_85.vhd|
+Z10 !s107 /home/pedro/Documentos/LabDig1/Exp2/comparador_85.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Adataflow
+R1
+R2
+DEx4 work 13 comparador_85 0 22 nRX1cKGSWahUOZjWkD0Vo3
+!i122 4
+l41
+L37 20
+V1]eQ[UffKzW]]?63mLgma0
+!s100 P^;hPi]5OVVdjL6GdC0U80
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Ecomparador_85_tb
+R0
+R1
+R2
+!i122 5
+R3
+Z13 8/home/pedro/Documentos/LabDig1/Exp2/comparador_85_tb.vhd
+Z14 F/home/pedro/Documentos/LabDig1/Exp2/comparador_85_tb.vhd
+l0
+Z15 L21 1
+V_L@<^2LK:FOUb@`gz^K>R1
+!s100 4VIK_9S5TGB[W@5YeU@Om1
+R6
+32
+R7
+!i10b 1
+R8
+Z16 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/Documentos/LabDig1/Exp2/comparador_85_tb.vhd|
+Z17 !s107 /home/pedro/Documentos/LabDig1/Exp2/comparador_85_tb.vhd|
+!i113 1
+R11
+R12
+Atb
+R1
+R2
+DEx4 work 16 comparador_85_tb 0 22 _L@<^2LK:FOUb@`gz^K>R1
+!i122 5
+l86
+L24 115
+V0I_QP64>Hgca4oHh3LH2C2
+!s100 cBGS3RGE85l=P2`MJ^QaS0
+R6
+32
+R7
+!i10b 1
+R8
+R16
+R17
+!i113 1
+R11
+R12
+Econtador_163
+R0
+Z18 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R1
+R2
+!i122 0
+R3
+Z19 8/home/pedro/Documentos/LabDig1/Exp2/contador_163.vhd
+Z20 F/home/pedro/Documentos/LabDig1/Exp2/contador_163.vhd
+l0
+L19 1
+VWj>hDW5JaQnFBm8n4zHQK1
+!s100 HncTPI9f>PSaSM@8d2b100
+R6
+32
+Z21 !s110 1673745442
+!i10b 1
+Z22 !s108 1673745442.000000
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/Documentos/LabDig1/Exp2/contador_163.vhd|
+Z24 !s107 /home/pedro/Documentos/LabDig1/Exp2/contador_163.vhd|
+!i113 1
+R11
+R12
+Acomportamental
+R18
+R1
+R2
+DEx4 work 12 contador_163 0 22 Wj>hDW5JaQnFBm8n4zHQK1
+!i122 0
+l34
+L32 29
+Vb^X@5ndgX5UJ@jUXZMM1M1
+!s100 :UBU?:`V1RR45eY[;lMH80
+R6
+32
+R21
+!i10b 1
+R22
+R23
+R24
+!i113 1
+R11
+R12
+Econtador_163_tb
+Z25 w1673398788
+R1
+R2
+!i122 2
+R3
+Z26 8/home/pedro/Documentos/LabDig1/Exp2/contador_163_tb.vhd
+Z27 F/home/pedro/Documentos/LabDig1/Exp2/contador_163_tb.vhd
+l0
+L20 1
+VXSzCmQWTR1]7c=hEJUaZn3
+!s100 8<kW60Qd:zde5T3l1AELS2
+R6
+32
+Z28 !s110 1673749672
+!i10b 1
+Z29 !s108 1673749672.000000
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/Documentos/LabDig1/Exp2/contador_163_tb.vhd|
+Z31 !s107 /home/pedro/Documentos/LabDig1/Exp2/contador_163_tb.vhd|
+!i113 1
+R11
+R12
+Atb
+R1
+R2
+DEx4 work 15 contador_163_tb 0 22 XSzCmQWTR1]7c=hEJUaZn3
+!i122 2
+l57
+L23 225
+VgLSgi`o`W<^I3>7:L]@9j2
+!s100 AjjOZJX`J[Qgfg2Q`iQLI0
+R6
+32
+R28
+!i10b 1
+R29
+R30
+R31
+!i113 1
+R11
+R12
+Eram_16x4
+R0
+R18
+R1
+R2
+!i122 6
+R3
+Z32 8/home/pedro/Documentos/LabDig1/Exp2/ram_16x4.vhd
+Z33 F/home/pedro/Documentos/LabDig1/Exp2/ram_16x4.vhd
+l0
+L28 1
+Vg`PTnemeRgQL_3ISd6Mch0
+!s100 7_Oke2`[UPj15mR6JKQR]2
+R6
+32
+Z34 !s110 1673825542
+!i10b 1
+Z35 !s108 1673825542.000000
+Z36 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/Documentos/LabDig1/Exp2/ram_16x4.vhd|
+Z37 !s107 /home/pedro/Documentos/LabDig1/Exp2/ram_16x4.vhd|
+!i113 1
+R11
+R12
+Aram_modelsim
+R18
+R1
+R2
+Z38 DEx4 work 8 ram_16x4 0 22 g`PTnemeRgQL_3ISd6Mch0
+!i122 6
+l90
+L70 40
+VW<X<c?LzFVB3KHZa6`TZ33
+!s100 @Wb^3GhPLl>oU<nW@hX`C0
+R6
+32
+R34
+!i10b 1
+R35
+R36
+R37
+!i113 1
+R11
+R12
+Aram_mif
+R18
+R1
+R2
+R38
+!i122 6
+l48
+L40 28
+V35TzLdD?hg?cR8AAFacOD1
+!s100 Q0QMUcJL86RTKThife6VD3
+R6
+32
+R34
+!i10b 1
+R35
+R36
+R37
+!i113 1
+R11
+R12
+Eram_16x4_tb
+R0
+R18
+R1
+R2
+!i122 7
+R3
+Z39 8/home/pedro/Documentos/LabDig1/Exp2/ram_16x4_tb.vhd
+Z40 F/home/pedro/Documentos/LabDig1/Exp2/ram_16x4_tb.vhd
+l0
+R15
+Vl9?2h02:Ob[cA3[3CH6na2
+!s100 RK_1P5=FkY]nIR2@D`>_g2
+R6
+32
+R34
+!i10b 1
+R35
+Z41 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|/home/pedro/Documentos/LabDig1/Exp2/ram_16x4_tb.vhd|
+!s107 /home/pedro/Documentos/LabDig1/Exp2/ram_16x4_tb.vhd|
+!i113 1
+R11
+R12
+Atb
+R38
+R18
+R1
+R2
+DEx4 work 11 ram_16x4_tb 0 22 l9?2h02:Ob[cA3[3CH6na2
+!i122 7
+l56
+L24 111
+V3Gj3P_jUfdng<>JoW`9A51
+!s100 bI[;FLQ:_lOCNSZj?idN61
+R6
+32
+R34
+!i10b 1
+R35
+R41
+Z42 !s107 /home/pedro/Documentos/LabDig1/Exp2/ram_16x4_tb.vhd|
+!i113 1
+R11
+R12
