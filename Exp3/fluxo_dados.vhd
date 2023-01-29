@@ -87,7 +87,7 @@ begin
 
     -- sinais de controle ativos em alto
     -- sinais dos componentes ativos em baixo
-    s_not_zera    <= zeraC;
+    s_not_zera    <= not zeraC;
     s_not_escreve <= not escreveM;
     
     contador: contador_163
@@ -141,7 +141,7 @@ begin
         port map (
             clk          => clock,
             endereco     => s_endereco,
-            dado_entrada => chaves,
+            dado_entrada => s_chaves,
             we           => s_not_escreve,-- we ativo em baixo
             ce           => '0',
             dado_saida   => s_dado
