@@ -86,6 +86,7 @@ begin
         pronto => pronto,
         db_estado => out_estado
     );
+    db_iniciar <= iniciar;
 
     HEX0: hexa7seg port map(hexa => out_cont, sseg => db_contagem);
 
