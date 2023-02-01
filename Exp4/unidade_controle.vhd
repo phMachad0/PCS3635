@@ -58,7 +58,7 @@ begin
         inicial     when  Eatual=inicial and iniciar='0' else
         preparacao  when  (Eatual=inicial or Eatual=acerto or Eatual=erro) and iniciar='1' else
         espera      when  Eatual=preparacao or (Eatual=espera and jogada='0') else
-        registra    when  Eatual=preparacao and jogada='1' else
+        registra    when  Eatual=espera and jogada='1' else
         comparacao  when  Eatual=registra else
         proximo     when  Eatual=comparacao and fim='0' and igual='1' else
         acerto      when  Eatual=comparacao and fim='1' and igual='1' else
