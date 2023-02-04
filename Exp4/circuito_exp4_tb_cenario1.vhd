@@ -1,18 +1,12 @@
 --------------------------------------------------------------------------
--- Arquivo   : circuito_exp4_tb_modelo.vhd
+-- Arquivo   : circuito_exp4_tb_cenario1.vhd
 -- Projeto   : Experiencia 04 - Desenvolvimento de Projeto de
 --                              Circuitos Digitais com FPGA
 --------------------------------------------------------------------------
 -- Descricao : modelo de testbench para simulação com ModelSim
 --
 --             implementa um Cenário de Teste do circuito
---             com 4 jogadas certas e erro na quinta jogada
---------------------------------------------------------------------------
--- Revisoes  :
---     Data        Versao  Autor             Descricao
---     01/02/2020  1.0     Edson Midorikawa  criacao
---     27/01/2021  1.1     Edson Midorikawa  revisao
---     27/01/2022  1.2     Edson Midorikawa  revisao e adaptacao
+--             que acerta todas as 16 jogadas
 --------------------------------------------------------------------------
 
 library ieee;
@@ -20,10 +14,10 @@ use ieee.std_logic_1164.all;
 use std.textio.all;
 
 -- entidade do testbench
-entity circuito_exp4_tb_modelo is
+entity circuito_exp4_tb_cenario1 is
 end entity;
 
-architecture tb of circuito_exp4_tb_modelo is
+architecture tb of circuito_exp4_tb_cenario1 is
 
   -- Componente a ser testado (Device Under Test -- DUT)
   component circuito_exp4
@@ -96,8 +90,8 @@ begin
        );
  
   ---- Gera sinais de estimulo para a simulacao
-  -- Cenario de Teste : acerta as primeiras 4 jogadas
-  --                    e erra a 5a jogada
+  -- Cenario de Teste : acerta todas as 16 jogadas
+
   stimulus: process is
   begin
 
@@ -118,45 +112,122 @@ begin
     iniciar_in <= '0';
     
     -- espera para inicio dos testes
-    wait for 10*clockPeriod;
+    wait for 4*clockPeriod;
     wait until falling_edge(clk_in);
 
-    -- Cenario de Teste - acerta as 4 primeiras jogadas e erra a 5a jogada
+    -- Cenario de Teste - acerta todas as 16 jogadas
 
-    ---- jogada #1 (chaves=0001 e 15 clocks de duracao)
+    ---- jogada #1
     chaves_in <= "0001";
-    wait for 15*clockPeriod;
+    wait for 4*clockPeriod;
     chaves_in <= "0000";
     -- espera entre jogadas de 10 clocks
-    wait for 10*clockPeriod;  
+    wait for 4*clockPeriod;  
 
-    ---- jogada #2 (chaves=0010 e 5 clocks de duracao)
+    ---- jogada #2
     chaves_in <= "0010";
-    wait for 5*clockPeriod;
+    wait for 4*clockPeriod;
     chaves_in <= "0000";
     ---- espera entre jogadas
-    wait for 10*clockPeriod;
+    wait for 4*clockPeriod;
  
-    ---- jogada #3 (chaves=0100 e 7 clocks de duracao)
+    ---- jogada #3
     chaves_in <= "0100";
-    wait for 7*clockPeriod;
+    wait for 4*clockPeriod;
     chaves_in <= "0000";
     -- espera entre jogadas
-    wait for 10*clockPeriod;  
+    wait for 4*clockPeriod;  
 
-    ---- jogada #4 (chaves=1000 e 15 clocks de duracao)
+    ---- jogada #4
     chaves_in <= "1000";
-    wait for 15*clockPeriod;
+    wait for 4*clockPeriod;
     chaves_in <= "0000";
     ---- espera entre jogadas
-    wait for 10*clockPeriod;
+    wait for 4*clockPeriod;
  
-    ---- jogada #5 (jogada errada: chaves=0001 e 12 clocks de duracao)
-    chaves_in <= "0001"; -- jogada certa "0100";
-    wait for 12*clockPeriod;
+    ---- jogada #5
+    chaves_in <= "0100";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+	 
+    ---- jogada #6
+    chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #7
+    chaves_in <= "0001";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    -- espera entre jogadas de 10 clocks
+    wait for 4*clockPeriod;  
+
+    ---- jogada #8
+    chaves_in <= "0001";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #9
+    chaves_in <= "0010";
+    wait for 4*clockPeriod;
     chaves_in <= "0000";
     -- espera entre jogadas
-    wait for 20*clockPeriod;  
+    wait for 4*clockPeriod;  
+
+    ---- jogada #10
+    chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #11
+    chaves_in <= "0100";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+	 
+    ---- jogada #12
+    chaves_in <= "0100";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+	 
+    ---- jogada #13
+    chaves_in <= "1000";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    -- espera entre jogadas de 10 clocks
+    wait for 4*clockPeriod;  
+
+    ---- jogada #14
+    chaves_in <= "1000";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #15
+    chaves_in <= "0001";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    -- espera entre jogadas
+    wait for 4*clockPeriod;  
+
+    ---- jogada #16
+    chaves_in <= "0100";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
  
     ---- final do testbench
     assert false report "fim da simulacao" severity note;
