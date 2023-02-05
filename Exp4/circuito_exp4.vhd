@@ -105,6 +105,7 @@ begin
     );
     db_igual <= igual_sig;
     db_clock <= clock;
+    leds <= db_mem;
     HEX0: hexa7seg port map(hexa => db_cont, sseg => db_contagem);
 
     HEX1: hexa7seg port map(hexa => db_mem, sseg => db_memoria);

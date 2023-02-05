@@ -64,7 +64,7 @@ begin
         acerto      when  Eatual=comparacao and fim='1' and igual='1' else
         erro        when  Eatual=comparacao and igual='0' else
         espera      when  Eatual=proximo else
-        inicial     when  Eatual=acerto or Eatual=erro else
+        preparacao  when  Eatual=acerto or Eatual=erro else
         inicial;
 
     -- logica de saída (maquina de Moore)
