@@ -14,10 +14,10 @@ use ieee.std_logic_1164.all;
 use std.textio.all;
 
 -- entidade do testbench
-entity circuito_exp4_desafio_tb_cenario2 is
+entity circuito_exp4_desafio_tb_cenario3 is
 end entity;
 
-architecture tb of circuito_exp4_desafio_tb_cenario2 is
+architecture tb of circuito_exp4_desafio_tb_cenario3 is
 
   -- Componente a ser testado (Device Under Test -- DUT)
   component circuito_exp4_desafio
@@ -36,7 +36,8 @@ architecture tb of circuito_exp4_desafio_tb_cenario2 is
         db_estado      : out std_logic_vector (6 downto 0);
         db_jogadafeita : out std_logic_vector (6 downto 0);
         db_clock       : out std_logic;
-        db_tem_jogada  : out std_logic
+        db_tem_jogada  : out std_logic;
+        db_timeout     : out std_logic
     );
   end component;
   
@@ -58,6 +59,7 @@ architecture tb of circuito_exp4_desafio_tb_cenario2 is
   signal memoria_out    : std_logic_vector(6 downto 0) := "0000000";
   signal estado_out     : std_logic_vector(6 downto 0) := "0000000";
   signal jogada_out     : std_logic_vector(6 downto 0) := "0000000";
+  signal timeout_out    : std_logic := '0';
 
   -- Configurações do clock
   signal keep_simulating: std_logic := '0'; -- delimita o tempo de geração do clock
@@ -86,7 +88,8 @@ begin
           db_estado       => estado_out,
           db_jogadafeita  => jogada_out,  
           db_clock        => clock_out,
-          db_tem_jogada   => tem_jogada_out
+          db_tem_jogada   => tem_jogada_out,
+          db_timeout      => timeout_out
        );
  
   ---- Gera sinais de estimulo para a simulacao
