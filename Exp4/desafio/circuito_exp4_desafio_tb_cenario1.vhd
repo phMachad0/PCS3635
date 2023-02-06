@@ -1,26 +1,26 @@
 --------------------------------------------------------------------------
--- Arquivo   : circuito_exp4_tb_cenario2.vhd
+-- Arquivo   : circuito_exp4_tb_cenario1.vhd
 -- Projeto   : Experiencia 04 - Desenvolvimento de Projeto de
 --                              Circuitos Digitais com FPGA
 --------------------------------------------------------------------------
 -- Descricao : modelo de testbench para simulação com ModelSim
 --
 --             implementa um Cenário de Teste do circuito
---             que acerta as 3 primeiras jogadas e erra a 4a jogada
-
+--             que acerta todas as 16 jogadas
+--------------------------------------------------------------------------
 
 library ieee;
 use ieee.std_logic_1164.all;
 use std.textio.all;
 
 -- entidade do testbench
-entity circuito_exp4_tb_cenario2 is
+entity circuito_exp4_desafio_tb_cenario1 is
 end entity;
 
-architecture tb of circuito_exp4_tb_cenario2 is
+architecture tb of circuito_exp4_desafio_tb_cenario1 is
 
   -- Componente a ser testado (Device Under Test -- DUT)
-  component circuito_exp4
+  component circuito_exp4_desafio
     port (
         clock          : in  std_logic;
         reset          : in  std_logic;
@@ -69,7 +69,7 @@ begin
   clk_in <= (not clk_in) and keep_simulating after clockPeriod/2;
   
   ---- DUT para Simulacao
-  dut: circuito_exp4
+  dut: circuito_exp4_desafioo
        port map
        (
           clock           => clk_in,
@@ -90,7 +90,7 @@ begin
        );
  
   ---- Gera sinais de estimulo para a simulacao
-  -- Cenario de Teste : acerta as 3 primeiras jogadas e erra a 4a jogada
+  -- Cenario de Teste : acerta todas as 16 jogadas
 
   stimulus: process is
   begin
@@ -115,7 +115,7 @@ begin
     wait for 4*clockPeriod;
     wait until falling_edge(clk_in);
 
-    -- Cenario de Teste - acerta as 3 primeiras jogadas e erra a 4a jogada
+    -- Cenario de Teste - acerta todas as 16 jogadas
 
     ---- jogada #1
     chaves_in <= "0001";
@@ -139,7 +139,91 @@ begin
     wait for 4*clockPeriod;  
 
     ---- jogada #4
+    chaves_in <= "1000";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #5
+    chaves_in <= "0100";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+	 
+    ---- jogada #6
+    chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #7
     chaves_in <= "0001";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    -- espera entre jogadas de 10 clocks
+    wait for 4*clockPeriod;  
+
+    ---- jogada #8
+    chaves_in <= "0001";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #9
+    chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    -- espera entre jogadas
+    wait for 4*clockPeriod;  
+
+    ---- jogada #10
+    chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #11
+    chaves_in <= "0100";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+	 
+    ---- jogada #12
+    chaves_in <= "0100";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+	 
+    ---- jogada #13
+    chaves_in <= "1000";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    -- espera entre jogadas de 10 clocks
+    wait for 4*clockPeriod;  
+
+    ---- jogada #14
+    chaves_in <= "1000";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    ---- espera entre jogadas
+    wait for 4*clockPeriod;
+ 
+    ---- jogada #15
+    chaves_in <= "0001";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    -- espera entre jogadas
+    wait for 4*clockPeriod;  
+
+    ---- jogada #16
+    chaves_in <= "0100";
     wait for 4*clockPeriod;
     chaves_in <= "0000";
     ---- espera entre jogadas
