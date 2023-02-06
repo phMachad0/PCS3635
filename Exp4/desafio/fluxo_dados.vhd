@@ -10,13 +10,15 @@ port (
 		zeraR 			: in std_logic;
 		registraR 		: in std_logic;
 		chaves 			: in std_logic_vector (3 downto 0);
+        reset_timeout   : in std_logic;
 		igual 			: out std_logic;
 		fimC 				: out std_logic;
 		jogada_feita 	: out std_logic;
+        time_out        : out std_logic;
 		db_tem_jogada 	: out std_logic;
 		db_contagem 	: out std_logic_vector (3 downto 0);
 		db_memoria 		: out std_logic_vector (3 downto 0);
-		db_jogada 		: out std_logic_vector (3 downto 0)
+		db_jogada 		: out std_logic_vector (3 downto 0);
     );
 end entity fluxo_dados;
 
@@ -93,6 +95,14 @@ architecture estrutural of fluxo_dados is
         pulso  : out std_logic
     );
   end component;
+
+  component timeout is
+    port(
+        clock: in std_logic;
+        reset: in std_logic;
+        time_out: out std_logic
+    );
+  end component;
     
 begin
 
@@ -166,6 +176,12 @@ begin
 			  sinal => s_chaveacionada,
 			  pulso => jogada_feita
         );
+    
+    timeout_counter: timeout port map(
+        clock => clock,
+        reset => reset_timeout,
+        time_out => time_out
+    ),
 		  
     db_contagem <= s_endereco;
 	 db_tem_jogada <= s_chaveacionada;
