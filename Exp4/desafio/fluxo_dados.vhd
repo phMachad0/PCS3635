@@ -10,15 +10,15 @@ port (
 		zeraR 			: in std_logic;
 		registraR 		: in std_logic;
 		chaves 			: in std_logic_vector (3 downto 0);
-        reset_timeout   : in std_logic;
+      reset_timeout   : in std_logic;
 		igual 			: out std_logic;
 		fimC 				: out std_logic;
 		jogada_feita 	: out std_logic;
-        time_out        : out std_logic;
+      time_out        : out std_logic;
 		db_tem_jogada 	: out std_logic;
 		db_contagem 	: out std_logic_vector (3 downto 0);
 		db_memoria 		: out std_logic_vector (3 downto 0);
-		db_jogada 		: out std_logic_vector (3 downto 0);
+		db_jogada 		: out std_logic_vector (3 downto 0)
     );
 end entity fluxo_dados;
 
@@ -181,7 +181,7 @@ begin
         clock => clock,
         reset => reset_timeout,
         time_out => time_out
-    ),
+    );
 		  
     db_contagem <= s_endereco;
 	 db_tem_jogada <= s_chaveacionada;

@@ -27,19 +27,22 @@ entity unidade_controle is
         fim : in std_logic;
         jogada : in std_logic;
         igual : in std_logic;
+		  time_out : in std_logic;
         zeraC : out std_logic;
         contaC : out std_logic;
         zeraR : out std_logic;
+		  zeraT	: out std_logic;
         registraR : out std_logic;
         acertou : out std_logic;
         errou : out std_logic;
+		  esgotou : out std_logic;
         pronto : out std_logic;
         db_estado : out std_logic_vector(3 downto 0)
     );
 end entity;
 
 architecture fsm of unidade_controle is
-    type t_estado is (inicial, preparacao, espera, registra, comparacao, proximo, acerto, erro);
+    type t_estado is (inicial, preparacao, espera, registra, comparacao, proximo, acerto, erro, esgotado);
     signal Eatual, Eprox: t_estado;
 begin
 
@@ -56,15 +59,16 @@ begin
     -- logica de proximo estado
     Eprox <=
         inicial     when  Eatual=inicial and iniciar='0' else
-        preparacao  when  (Eatual=inicial or Eatual=acerto or Eatual=erro) and iniciar='1' else
-        espera      when  Eatual=preparacao or (Eatual=espera and jogada='0') else
+        preparacao  when  (Eatual=inicial or Eatual=acerto or Eatual=erro or Eatual=esgotado) and iniciar='1' else
+        espera      when  Eatual=preparacao or (Eatual=espera and jogada='0' and time_out='0') else
         registra    when  Eatual=espera and jogada='1' else
         comparacao  when  Eatual=registra else
         proximo     when  Eatual=comparacao and fim='0' and igual='1' else
         acerto      when  Eatual=comparacao and fim='1' and igual='1' else
         erro        when  Eatual=comparacao and igual='0' else
+		  esgotado 	  when  Eatual=espera and time_out='1' else
         espera      when  Eatual=proximo else
-        preparacao  when  (Eatual=acerto or Eatual=erro) and iniciar = '1' else
+        preparacao  when  (Eatual=acerto or Eatual=erro or Eatual=esgotado) and iniciar = '1' else
         Eatual;
 
     -- logica de saída (maquina de Moore)
@@ -96,6 +100,14 @@ begin
         errou <=       '1' when erro,
                        '0' when others;
 
+    with Eatual select
+        esgotou <=     '1' when esgotado,
+                       '0' when others;
+							  
+    with Eatual select
+        zeraT <=       '1' when registra | preparacao ,
+                       '0' when others;
+
     -- saida de depuracao (db_estado)
     with Eatual select
         db_estado <= "0000" when inicial,     -- 0
@@ -106,6 +118,7 @@ begin
                      "0110" when proximo,     -- 6
                      "1100" when acerto,      -- C
                      "1101" when erro,        -- D
+							"1110" when esgotado,     -- E
                      "1111" when others;      -- F
 
 end architecture fsm;
