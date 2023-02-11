@@ -125,12 +125,12 @@ begin
         db_estado <= "0000" when inicial,     -- 0
                      "0001" when preparacao,  -- 1
                      "0010" when espera,      -- 2
-                     "0011" when ini_rodada   -- 3
+                     "0011" when ini_rodada,   -- 3
                      "0100" when registra,    -- 4
                      "0101" when comparacao,  -- 5
                      "0110" when proxima_jogada,   -- 6
-                     "0111" when ultima_jogada     -- 7
-                     "1000" when proxima_rodada    -- 8
+                     "0111" when ultima_jogada,     -- 7
+                     "1000" when proxima_rodada,    -- 8
                      "1100" when acerto,      -- C
                      "1101" when erro,        -- D
 							"1110" when esgotado,     -- E
