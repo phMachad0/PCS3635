@@ -97,7 +97,7 @@ begin
                        '0' when others;
     
     with Eatual select
-        errou <=       '1' when erro,
+        errou <=       '1' when erro | esgotado,
                        '0' when others;
 
     with Eatual select
