@@ -64,7 +64,7 @@ begin
         inicial     when Eatual = inicial and iniciar='0' else
         preparacao  when (Eatual=inicial or Eatual=acerto or Eatual=erro or Eatual=esgotado) and iniciar='1' else
         ini_rodada  when Eatual = preparacao or Eatual = proxima_rodada else
-        espera      when Eatual = ini_rodada or (Eatual=espera and jogada='0' and time_out='0') else
+        espera      when Eatual = ini_rodada or Eatual = proxima_jogada or (Eatual=espera and jogada='0' and time_out='0') else
         esgotado    when Eatual = espera and jogada='0' and time_out = '1' else
         registra    when  Eatual=espera and jogada='1' else
         comparacao  when Eatual = registra else

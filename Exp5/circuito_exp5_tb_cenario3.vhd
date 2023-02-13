@@ -128,13 +128,19 @@ begin
     chaves_in <= "0001";
     wait for 4*clockPeriod;
     chaves_in <= "0000";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
     -- espera entre rodadas de 10 clocks
     wait for 4*clockPeriod;  
 
     ---- rodada #1
     chaves_in <= "0001";
     wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    wait for 4*clockPeriod;
     chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
     wait for 4*clockPeriod;
     chaves_in <= "0000";
     ---- espera entre rodadas
@@ -143,7 +149,11 @@ begin
     ---- rodada #2
     chaves_in <= "0001";
     wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    wait for 4*clockPeriod;
     chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
     wait for 7000*clockPeriod;
     chaves_in <= "0100";
     wait for 4*clockPeriod;

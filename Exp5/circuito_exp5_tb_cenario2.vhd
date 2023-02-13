@@ -31,7 +31,7 @@ architecture tb of circuito_exp5_tb_cenario2 is
         errou : out std_logic;
         leds : out std_logic_vector (3 downto 0);
         db_jogada_correta : out std_logic;
-		  db_fim_rodada : out std_logic;
+		    db_fim_rodada : out std_logic;
         db_contagem : out std_logic_vector (6 downto 0);
         db_memoria : out std_logic_vector (6 downto 0);
         db_estado : out std_logic_vector (6 downto 0);
@@ -135,7 +135,11 @@ begin
     ---- rodada #1
     chaves_in <= "0001";
     wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    wait for 4*clockPeriod;
     chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
     wait for 4*clockPeriod;
     chaves_in <= "0000";
     ---- espera entre rodadas
@@ -144,9 +148,15 @@ begin
     ---- rodada #2
     chaves_in <= "0001";
     wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    wait for 4*clockPeriod;
     chaves_in <= "0010";
     wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    wait for 4*clockPeriod;
     chaves_in <= "0100";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
     wait for 4*clockPeriod;
     chaves_in <= "0000";
     -- espera entre rodadas
@@ -155,9 +165,15 @@ begin
     ---- rodada #3
     chaves_in <= "0001";
     wait for 4*clockPeriod;
-    chaves_in <= "0010";
+    chaves_in <= "0000";
     wait for 4*clockPeriod;
     chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
+    wait for 4*clockPeriod;
+    chaves_in <= "0010";
+    wait for 4*clockPeriod;
+    chaves_in <= "0000";
     ---- espera entre rodadas
     wait for 4*clockPeriod;
  
