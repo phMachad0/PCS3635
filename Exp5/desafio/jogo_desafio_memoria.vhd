@@ -1,12 +1,12 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity circuito_exp5 is
+entity jogo_desafio_memoria is
     port (
         clock : in std_logic;
         reset : in std_logic;
         iniciar : in std_logic;
-        chaves : in std_logic_vector (3 downto 0);
+        botoes : in std_logic_vector (3 downto 0);
         pronto : out std_logic;
         acertou : out std_logic;
         errou : out std_logic;
@@ -26,7 +26,7 @@ entity circuito_exp5 is
     );
 end entity;
 
-architecture assemble of circuito_exp5 is
+architecture assemble of jogo_desafio_memoria is
     component fluxo_dados is
 		port (
         clock 			: in std_logic;
@@ -112,7 +112,7 @@ begin
         escreve => escreve_sig,
         zeraRC => zeraRC_sig,
         registraRC => registraRC_sig,
-        chaves => chaves,
+        chaves => botoes,
 		  leds => leds,
         jogada_correta => jogada_correta_sig,
 		  enderecoIgualRodada => enderecoIgualRodada_sig,
