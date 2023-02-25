@@ -80,13 +80,13 @@ begin
     Eprox <=
         inicial     when Eatual = inicial and iniciar='0' else
         preparacao  when (Eatual=inicial or Eatual=acerto or Eatual=erro or Eatual=esgotado) and iniciar='1' else
-        ini_rodada  when (Eatual = preparacao and fim_prep='1') or Eatual = proxima_rodada else
+        ini_rodada  when (Eatual = preparacao and fim_prep='1') or Eatual = proxima_rodada or (Eatual = ultima_rodada and ult_rodada_fim = '0') else
         espera      when Eatual = ini_rodada or Eatual = proxima_jogada or (Eatual=espera and jogada='0' and time_out='0') else
         esgotado    when Eatual = espera and jogada='0' and time_out = '1' else
         registra    when Eatual=espera and jogada='1' else
 		  escreve_mem when Eatual = registra and fim_rodada = '1' and primeira_rodada = '0' and ult_rodada_fim = '0' else
         comparacao  when (Eatual = registra and (fim_rodada = '0' or primeira_rodada = '1' or ult_rodada_fim = '1')) or Eatual = escreve_mem else
-        proxima_jogada    when Eatual = comparacao and fim_rodada = '0' and igual = '1' else
+        proxima_jogada    when (Eatual = comparacao and fim_rodada = '0' and igual = '1') else
         ultima_jogada     when Eatual = comparacao and fim_rodada = '1' and igual = '1' else
         erro              when (Eatual = comparacao and igual = '0') or (Eatual = erro and iniciar='0') else
 		  ultima_rodada     when (Eatual = ultima_jogada and fim_jogo = '1') else
