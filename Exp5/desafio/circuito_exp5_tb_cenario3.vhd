@@ -124,42 +124,44 @@ begin
 
     -- Cenario de Teste - cenario com timeout na 3ª jogada da 3ª rodada
 
+    wait for 1010*clockPeriod;
+
     ---- rodada #0
     chaves_in <= "0001";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0000";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0000";
     -- espera entre rodadas de 10 clocks
-    wait for 4*clockPeriod;  
+    wait for 8*clockPeriod;  
 
     ---- rodada #1
     chaves_in <= "0001";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0000";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0010";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0000";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0000";
     ---- espera entre rodadas
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
 
     ---- rodada #2
     chaves_in <= "0001";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0000";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0010";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0000";
     wait for 7000*clockPeriod;
     chaves_in <= "0100";
-    wait for 4*clockPeriod;
+    wait for 8*clockPeriod;
     chaves_in <= "0000";
     -- espera entre rodadas
-    wait for 4*clockPeriod;  
+    wait for 5000*clockPeriod;  
  
     ---- final do testbench
     assert false report "fim da simulacao" severity note;
