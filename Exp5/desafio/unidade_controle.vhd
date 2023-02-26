@@ -62,10 +62,10 @@ begin
     begin
         if reset='1' then
             Eatual <= inicial;
-				ult_rodada_fim <= '0';
+			ult_rodada_fim <= '0';
         elsif clock'event and clock = '1' then
             Eatual <= Eprox;
-				ult_rodada_fim <= ult_rodada_fim_prox;
+			ult_rodada_fim <= ult_rodada_fim_prox;
         end if;
     end process;
 	 
@@ -74,7 +74,7 @@ begin
 									  '1' when Eatual = ultima_rodada else
 										ult_rodada_fim;
 										
-		db_ultima_rodada <= ult_rodada_fim;
+	db_ultima_rodada <= ult_rodada_fim;
 
     -- logica de proximo estado
     Eprox <=
@@ -154,19 +154,19 @@ begin
     -- saida de depuracao (db_estado)
     with Eatual select
         db_estado <= "0000" when inicial,     -- 0
-                     "0001" when preparacao,  -- 1
-                     "0010" when espera,      -- 2
-                     "0011" when ini_rodada,   -- 3
-                     "0100" when registra,    -- 4
-                     "0101" when comparacao,  -- 5
-                     "0110" when proxima_jogada,   -- 6
-                     "0111" when ultima_jogada,     -- 7
-                     "1000" when proxima_rodada,    -- 8
-							"1001" when ultima_rodada,  -- 9
-							"1010" when escreve_mem,    -- A
-                     "1100" when acerto,      -- C
-                     "1101" when erro,        -- D
-							"1110" when esgotado,     -- E
-                     "1111" when others;      -- F
+                    "0001" when preparacao,  -- 1
+                    "0010" when espera,      -- 2
+                    "0011" when ini_rodada,   -- 3
+                    "0100" when registra,    -- 4
+                    "0101" when comparacao,  -- 5
+                    "0110" when proxima_jogada,   -- 6
+                    "0111" when ultima_jogada,     -- 7
+                    "1000" when proxima_rodada,    -- 8
+					"1001" when ultima_rodada,  -- 9
+					"1010" when escreve_mem,    -- A
+                    "1100" when acerto,      -- C
+                    "1101" when erro,        -- D
+					"1110" when esgotado,     -- E
+                    "1111" when others;      -- F
 
 end architecture fsm;
