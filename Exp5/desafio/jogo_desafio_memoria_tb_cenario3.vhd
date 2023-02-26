@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------
--- Arquivo   : circuito_exp5_tb_cenario3.vhd
+-- Arquivo   : jogo_desafio_memoria_tb_cenario3.vhd
 -- Projeto   : Experiencia 04 - Desenvolvimento de Projeto de
 --                              Circuitos Digitais com FPGA
 --------------------------------------------------------------------------
@@ -14,18 +14,18 @@ use ieee.std_logic_1164.all;
 use std.textio.all;
 
 -- entidade do testbench
-entity circuito_exp5_tb_cenario3 is
+entity jogo_desafio_memoria_tb_cenario3 is
 end entity;
 
-architecture tb of circuito_exp5_tb_cenario3 is
+architecture tb of jogo_desafio_memoria_tb_cenario3 is
 
   -- Componente a ser testado (Device Under Test -- DUT)
-  component circuito_exp5
+  component jogo_desafio_memoria
     port (
         clock : in std_logic;
         reset : in std_logic;
         iniciar : in std_logic;
-        chaves : in std_logic_vector (3 downto 0);
+        botoes : in std_logic_vector (3 downto 0);
         pronto : out std_logic;
         acertou : out std_logic;
         errou : out std_logic;
@@ -46,7 +46,7 @@ architecture tb of circuito_exp5_tb_cenario3 is
   signal clk_in     : std_logic := '0';
   signal rst_in     : std_logic := '0';
   signal iniciar_in : std_logic := '0';
-  signal chaves_in  : std_logic_vector(3 downto 0) := "0000";
+  signal botoes_in  : std_logic_vector(3 downto 0) := "0000";
 
   ---- Declaracao dos sinais de saida
   signal igual_out      : std_logic := '0';
@@ -74,7 +74,7 @@ begin
   clk_in <= (not clk_in) and keep_simulating after clockPeriod/2;
   
   ---- DUT para Simulacao
-  dut: circuito_exp5
+  dut: jogo_desafio_memoria
        port map
        (
 			 db_jogada_correta => db_jogada_correta_out,
@@ -83,7 +83,7 @@ begin
           clock           => clk_in,
           reset           => rst_in,
           iniciar         => iniciar_in,
-          chaves          => chaves_in,
+          botoes          => botoes_in,
           acertou         => acertou_out,
           errou           => errou_out,
           pronto          => pronto_out,
@@ -127,39 +127,39 @@ begin
     wait for 1010*clockPeriod;
 
     ---- rodada #0
-    chaves_in <= "0001";
-    wait for 8*clockPeriod;
-    chaves_in <= "0000";
-    wait for 8*clockPeriod;
-    chaves_in <= "0000";
+    botoes_in <= "0001";
+    wait for 4*clockPeriod;
+    botoes_in <= "0000";
+    wait for 4*clockPeriod;
+    botoes_in <= "0000";
     -- espera entre rodadas de 10 clocks
     wait for 8*clockPeriod;  
 
     ---- rodada #1
-    chaves_in <= "0001";
-    wait for 8*clockPeriod;
-    chaves_in <= "0000";
-    wait for 8*clockPeriod;
-    chaves_in <= "0010";
-    wait for 8*clockPeriod;
-    chaves_in <= "0000";
-    wait for 8*clockPeriod;
-    chaves_in <= "0000";
+    botoes_in <= "0001";
+    wait for 4*clockPeriod;
+    botoes_in <= "0000";
+    wait for 4*clockPeriod;
+    botoes_in <= "0010";
+    wait for 4*clockPeriod;
+    botoes_in <= "0000";
+    wait for 4*clockPeriod;
+    botoes_in <= "0000";
     ---- espera entre rodadas
     wait for 8*clockPeriod;
 
     ---- rodada #2
-    chaves_in <= "0001";
-    wait for 8*clockPeriod;
-    chaves_in <= "0000";
-    wait for 8*clockPeriod;
-    chaves_in <= "0010";
-    wait for 8*clockPeriod;
-    chaves_in <= "0000";
+    botoes_in <= "0001";
+    wait for 4*clockPeriod;
+    botoes_in <= "0000";
+    wait for 4*clockPeriod;
+    botoes_in <= "0010";
+    wait for 4*clockPeriod;
+    botoes_in <= "0000";
     wait for 7000*clockPeriod;
-    chaves_in <= "0100";
-    wait for 8*clockPeriod;
-    chaves_in <= "0000";
+    botoes_in <= "0100";
+    wait for 4*clockPeriod;
+    botoes_in <= "0000";
     -- espera entre rodadas
     wait for 5000*clockPeriod;  
  
